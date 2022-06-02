@@ -18,7 +18,7 @@ const CameraController = () => {
   return null;
 };
 
-const objUrl = "";
+const objUrl = "https://firebasestorage.googleapis.com/v0/b/messebau-121f2.appspot.com/o/Room.obj?alt=media&token=ef2c9147-73d6-4252-a921-86e31422b1cc";
 
 function Scene() {
   const obj = useLoader(OBJLoader, objUrl);
