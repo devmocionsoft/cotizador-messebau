@@ -4,6 +4,7 @@ import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { Html, useProgress } from "@react-three/drei";
 import { MTLLoader } from "three-stdlib";
+import CheckboxList from "./components/CheckboxList";
 
 const CameraController = () => {
   const { camera, gl } = useThree();
@@ -43,15 +44,18 @@ function Loader() {
 
 function Test3D() {
   return (
-    <div className="canvas_container">
-      <Canvas camera={{ position: [0, 30, 180], fov: 40 }}>
-        <Suspense fallback={<Loader />}>
-          <CameraController />
-          <ambientLight />
-          <pointLight position={[10, 10, 10]} />
-          <Scene />
-        </Suspense>
-      </Canvas>
+    <div className="test3d_container">
+      <div className="canvas_container">
+        <Canvas camera={{ position: [0, 30, 180], fov: 40 }}>
+          <Suspense fallback={<Loader />}>
+            <CameraController />
+            <ambientLight />
+            <pointLight position={[10, 10, 10]} />
+            <Scene />
+          </Suspense>
+        </Canvas>
+      </div>
+      <CheckboxList />
     </div>
   );
 }
