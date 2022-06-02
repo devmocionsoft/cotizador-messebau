@@ -1,9 +1,9 @@
 import { Suspense, useEffect } from "react";
-import { Canvas, useThree } from "@react-three/fiber";
+import { Canvas, useThree, useLoader } from "@react-three/fiber";
 import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
-import { useLoader } from "@react-three/fiber";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { Html, useProgress } from "@react-three/drei";
+import { MTLLoader } from "three-stdlib";
 
 const CameraController = () => {
   const { camera, gl } = useThree();
@@ -18,11 +18,15 @@ const CameraController = () => {
   return null;
 };
 
-const objUrl = "";
+function Scene(props) {
+  const materials = useLoader(MTLLoader, "src/indoor plant_02.mtl");
+  const object = useLoader(OBJLoader, "src/indoor plant_02.obj", (loader) => {
+    console.log(loader);
+    materials.preload();
+    loader.setMaterials(materials);
+  });
 
-function Scene() {
-  const obj = useLoader(OBJLoader, objUrl);
-  return <primitive object={obj} />;
+  return <primitive object={object} {...props} />;
 }
 
 function Loader() {
@@ -33,7 +37,7 @@ function Loader() {
 function Test3D() {
   return (
     <div className="canvas_container">
-      <Canvas>
+      <Canvas camera={{ position: [0, 30, 180], fov: 20 }}>
         <Suspense fallback={<Loader />}>
           <CameraController />
           <ambientLight />
