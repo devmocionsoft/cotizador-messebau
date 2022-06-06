@@ -23,7 +23,16 @@ function Scene(props) {
   const ref = useRef();
   useEffect(() => {
     if (ref) {
+      console.log(ref.current.children[0]);
+
       ref.current.children[1].visible = false;
+
+      ref.current.children[0].position.y = -4;
+
+      // ref.current.children[0].scale.x = 0.9;
+      // ref.current.children[0].scale.y = 0.9;
+      // ref.current.children[0].scale.z = 0.9;
+
     }
   }, [ref]);
 
@@ -46,7 +55,7 @@ function Test3D() {
   return (
     <div className="test3d_container">
       <div className="canvas_container">
-        <Canvas camera={{ position: [0, 30, 180], fov: 40 }}>
+        <Canvas camera={{fov: 100}} >
           <Suspense fallback={<Loader />}>
             <CameraController />
             <ambientLight />
