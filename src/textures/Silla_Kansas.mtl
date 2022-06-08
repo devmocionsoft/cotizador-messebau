@@ -13,4 +13,3 @@ illum 2
 map_Bump \Sillas_Normal_OpenGL.png
 map_Kd \Sillas_Base_color.png
 map_Ns \Muebles_Roughness.png
-refl \Sillas_Metallic.png
