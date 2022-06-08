@@ -1,13 +1,12 @@
+import "./CheckboxList.css";
 import { useState } from "react";
-import { toppings } from "./toppings";
 
-const getFormattedPrice = (price) => `$${price.toFixed(2)}`;
+const getFormattedPrice = (price) => `$${price.toFixed(0)}`;
 
-export default function CheckboxList() {
+export default function CheckboxList({ list }) {
   const [checkedState, setCheckedState] = useState(
-    new Array(toppings.length).fill(false)
+    new Array(list.length).fill(false)
   );
-
   const [total, setTotal] = useState(0);
 
   const handleOnChange = (position) => {
@@ -20,7 +19,7 @@ export default function CheckboxList() {
     const totalPrice = updatedCheckedState.reduce(
       (sum, currentState, index) => {
         if (currentState === true) {
-          return sum + toppings[index].price;
+          return sum + list[index].id;
         }
         return sum;
       },
@@ -34,26 +33,24 @@ export default function CheckboxList() {
     <div className="App">
       <h3>Select Toppings</h3>
       <ul className="toppings-list">
-        {toppings.map(({ name, price }, index) => {
-          return (
-            <li key={index}>
-              <div className="toppings-list-item">
-                <div className="left-section">
-                  <input
-                    type="checkbox"
-                    id={`custom-checkbox-${index}`}
-                    name={name}
-                    value={name}
-                    checked={checkedState[index]}
-                    onChange={() => handleOnChange(index)}
-                  />
-                  <label htmlFor={`custom-checkbox-${index}`}>{name}</label>
-                </div>
-                <div className="right-section">{getFormattedPrice(price)}</div>
+        {list.map(({ name, id }, index) => (
+          <li key={index}>
+            <div className="toppings-list-item">
+              <div className="left-section">
+                <input
+                  type="checkbox"
+                  id={`custom-checkbox-${index}`}
+                  name={name}
+                  value={name}
+                  checked={checkedState[index]}
+                  onChange={() => handleOnChange(index)}
+                />
+                <label htmlFor={`custom-checkbox-${index}`}>{name}</label>
               </div>
-            </li>
-          );
-        })}
+              <div className="right-section">{getFormattedPrice(id)}</div>
+            </div>
+          </li>
+        ))}
         <li>
           <div className="toppings-list-item">
             <div className="left-section">Total:</div>

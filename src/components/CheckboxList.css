@@ -1,0 +1,8 @@
+.toppings-list-item {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.right-section {
+  margin-left: 30px;
+}
