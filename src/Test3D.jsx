@@ -5,6 +5,7 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { Html, useProgress } from "@react-three/drei";
 import { MTLLoader } from "three-stdlib";
 import CheckboxList from "./components/CheckboxList";
+import RadioList from "./components/RadioList";
 
 const CameraController = () => {
   const { camera, gl } = useThree();
@@ -58,6 +59,7 @@ function Test3D() {
         </Canvas>
       </div>
       {layers.length > 0 ? <CheckboxList list={layers} /> : null}
+      {layers.length > 0 ? <RadioList list={layers} /> : null}
     </div>
   );
 }
