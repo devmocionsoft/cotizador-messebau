@@ -1,7 +1,13 @@
-import Test3D from "./Test3D";
+import "./styles/CheckRadioList.css";
+import { BrowserRouter } from "react-router-dom";
+import MainRouter from "./MainRouter";
 
 function App() {
-  return <Test3D />;
+  return (
+    <BrowserRouter>
+      <MainRouter />
+    </BrowserRouter>
+  );
 }
 
 export default App;

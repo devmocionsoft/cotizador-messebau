@@ -21,7 +21,13 @@ export default function RadioList({ list }) {
     <div className="radio_container" onChange={onChangeValue}>
       {list.map((item, key) => (
         <label key={key}>
-          <input type="radio" value={item.name} name="gender" />
+          <input
+            type="radio"
+            value={item.name}
+            onChange={() => {}}
+            checked={selected === item.name}
+            name="option"
+          />
           {item.name}
         </label>
       ))}

@@ -1,4 +1,3 @@
-import "./CheckboxList.css";
 import { useState } from "react";
 
 const getFormattedPrice = (price) => `$${price.toFixed(0)}`;

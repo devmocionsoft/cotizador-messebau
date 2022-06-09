@@ -4,8 +4,8 @@ import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { Html, useProgress } from "@react-three/drei";
 import { MTLLoader } from "three-stdlib";
-import CheckboxList from "./components/CheckboxList";
-import RadioList from "./components/RadioList";
+import CheckboxList from "../components/CheckboxList";
+import RadioList from "../components/RadioList";
 
 const CameraController = () => {
   const { camera, gl } = useThree();
