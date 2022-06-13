@@ -4,6 +4,9 @@ import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { Html, useProgress } from "@react-three/drei";
 import { MTLLoader } from "three-stdlib";
+import mt from "../../material.json";
+import * as THREE from "three";
+
 import CheckboxList from "../components/CheckboxList";
 import RadioList from "../components/RadioList";
 
@@ -22,20 +25,14 @@ const CameraController = () => {
 
 function Scene({ setter }) {
   const ref = useRef();
-
-  useEffect(() => {
-    if (ref) {
-      setter(ref.current.children);
-      // ref.current.position.y = -4;
-    }
-  }, [ref]);
-
-  const materials = useLoader(MTLLoader, "src/textures/Silla_Kansas.mtl");
+  const materials = useLoader(MTLLoader, "src/textures/Silla_Channel.mtl");
   const object = useLoader(OBJLoader, "src/Silla.obj", (loader) => {
     materials.preload();
     loader.setMaterials(materials);
   });
 
+  useEffect(() => ref && setter(ref.current.children), [ref]);
+  // ref.current.position.y = -4;
   return <primitive ref={ref} object={object} />;
 }
 
@@ -46,6 +43,16 @@ function Loader() {
 
 function Test3D() {
   const [layers, setLayers] = useState([]);
+  const material = new THREE.MeshPhongMaterial(mt);
+  useEffect(() => layers[0] && console.log(layers), [layers]);
+  useEffect(() => {
+    layers[0] &&
+      setTimeout(() => {
+        console.log(material);
+        // layers[0].material = material;
+      }, 3000);
+  }, [layers]);
+
   return (
     <div className="test3d_container">
       <div className="canvas_container">
@@ -58,8 +65,12 @@ function Test3D() {
           </Suspense>
         </Canvas>
       </div>
-      {layers.length > 0 ? <CheckboxList list={layers} /> : null}
-      {layers.length > 0 ? <RadioList list={layers} /> : null}
+      {layers.length > 0 ? (
+        <>
+          <CheckboxList list={layers} />
+          <RadioList list={layers} />
+        </>
+      ) : null}
     </div>
   );
 }

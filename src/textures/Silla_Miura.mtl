@@ -10,6 +10,6 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Bump \Sillas_Normal_OpenGL.png
-map_Kd \Sillas_Base_color.png
-map_Ns \Muebles_Roughness.png
+map_Bump \hierba.png
+map_Kd \hierba.png
+map_Ns \hierba.png
