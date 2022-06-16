@@ -24,7 +24,7 @@ const CameraController = () => {
 
 function Scene({ setter }) {
   const ref = useRef();
-  const object2 = useLoader(GLTFLoader, "src/modelo/pequeno/Completo.gltf");
+  const object2 = useLoader(GLTFLoader, "src/modelo/small/Completo.gltf");
 
   useEffect(() => {
     if (ref) {
