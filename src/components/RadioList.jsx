@@ -23,7 +23,7 @@ export default function RadioList({ list }) {
       {list.map((item, key) => (
         <Item key={key} item={item} selected={selected} />
       ))}
-      <label>
+      <label style={{ display: "inline-flex" }}>
         <input type="radio" value="ninguno" name="option" />
         Ninguno
       </label>
@@ -36,7 +36,7 @@ const Item = ({ item, selected }) => {
 
   return (
     <>
-      <label>
+      <label style={{ display: "inline-flex" }}>
         <input
           type="radio"
           value={item.name}

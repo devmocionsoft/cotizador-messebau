@@ -24,11 +24,14 @@ const CameraController = () => {
 
 function Scene({ setter }) {
   const ref = useRef();
-  const object2 = useLoader(GLTFLoader, "src/Sillas2.gltf");
+  const object2 = useLoader(GLTFLoader, "src/modelo/pequeno/Completo.gltf");
 
   useEffect(() => {
-    ref && setter(ref.current.children);
-    ref.current.position.y = -1;
+    if (ref) {
+      setter(ref.current.children);
+      ref.current.position.y = -1;
+      console.log(ref.current);
+    }
   }, [ref]);
   return <primitive ref={ref} object={object2.scene} />;
 }
@@ -62,7 +65,7 @@ function Test3D() {
   return (
     <div className="test3d_container">
       <div className="canvas_container">
-        <Canvas camera={{ fov: 10, position: [0, 0, 5] }}>
+        <Canvas camera={{ fov: 70, position: [0, 0, 5] }}>
           <Suspense fallback={<Loader />}>
             <CameraController />
             <ambientLight />
@@ -74,7 +77,7 @@ function Test3D() {
       <div className="selector">
         {layersSorted
           ? Object.keys(layersSorted).map((label, key) => (
-              <div key={key} style={{ margin: 10 }}>
+              <div key={key} style={{ margin: 30 }}>
                 <h2>{label}</h2>
                 <RadioList list={layersSorted[label]} />
               </div>
