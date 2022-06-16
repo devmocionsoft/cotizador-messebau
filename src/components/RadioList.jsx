@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import * as THREE from "three";
 
 export default function RadioList({ list }) {
   const [selected, setSelected] = useState(list[0].name);
@@ -20,17 +21,31 @@ export default function RadioList({ list }) {
   return (
     <div className="radio_container" onChange={onChangeValue}>
       {list.map((item, key) => (
-        <label key={key}>
-          <input
-            type="radio"
-            value={item.name}
-            onChange={() => {}}
-            checked={selected === item.name}
-            name="option"
-          />
-          {item.name}
-        </label>
+        <Item key={key} item={item} selected={selected} />
       ))}
+      <label>
+        <input type="radio" value="ninguno" name="option" />
+        Ninguno
+      </label>
     </div>
   );
 }
+
+const Item = ({ item, selected }) => {
+  const validation = selected === item.name;
+
+  return (
+    <>
+      <label>
+        <input
+          type="radio"
+          value={item.name}
+          onChange={() => {}}
+          checked={validation}
+          name="option"
+        />
+        {item.name}
+      </label>
+    </>
+  );
+};

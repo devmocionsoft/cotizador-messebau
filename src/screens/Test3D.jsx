@@ -1,11 +1,10 @@
 import { Suspense, useEffect, useRef, useState } from "react";
 import { Canvas, useThree, useLoader } from "@react-three/fiber";
 import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { Html, useProgress } from "@react-three/drei";
 import { MTLLoader } from "three-stdlib";
-import mt from "../../material.json";
-import * as THREE from "three";
 
 import CheckboxList from "../components/CheckboxList";
 import RadioList from "../components/RadioList";
@@ -25,15 +24,13 @@ const CameraController = () => {
 
 function Scene({ setter }) {
   const ref = useRef();
-  const materials = useLoader(MTLLoader, "src/textures/Silla_Channel.mtl");
-  const object = useLoader(OBJLoader, "src/Silla.obj", (loader) => {
-    materials.preload();
-    loader.setMaterials(materials);
-  });
+  const object2 = useLoader(GLTFLoader, "src/Sillas2.gltf");
 
-  useEffect(() => ref && setter(ref.current.children), [ref]);
-  // ref.current.position.y = -4;
-  return <primitive ref={ref} object={object} />;
+  useEffect(() => {
+    ref && setter(ref.current.children);
+    ref.current.position.y = -1;
+  }, [ref]);
+  return <primitive ref={ref} object={object2.scene} />;
 }
 
 function Loader() {
@@ -43,20 +40,29 @@ function Loader() {
 
 function Test3D() {
   const [layers, setLayers] = useState([]);
-  const material = new THREE.MeshPhongMaterial(mt);
-  useEffect(() => layers[0] && console.log(layers), [layers]);
+  const [layersSorted, setLayersSorted] = useState();
+
   useEffect(() => {
-    layers[0] &&
-      setTimeout(() => {
-        console.log(material);
-        // layers[0].material = material;
-      }, 3000);
+    if (layers[0]) {
+      let meshList = {};
+      layers.forEach((item) => {
+        const labels = item.name.split("_");
+        // para explicarle a diseño el funcionamiento
+        console.log(labels);
+        const label = labels[0];
+        meshList[label]
+          ? meshList[label].push(item)
+          : (meshList[label] = [item]);
+      });
+      setLayersSorted(meshList);
+      console.log(meshList);
+    }
   }, [layers]);
 
   return (
     <div className="test3d_container">
       <div className="canvas_container">
-        <Canvas camera={{ fov: 30, position: [0, 0, 5] }}>
+        <Canvas camera={{ fov: 10, position: [0, 0, 5] }}>
           <Suspense fallback={<Loader />}>
             <CameraController />
             <ambientLight />
@@ -65,12 +71,16 @@ function Test3D() {
           </Suspense>
         </Canvas>
       </div>
-      {layers.length > 0 ? (
-        <>
-          <CheckboxList list={layers} />
-          <RadioList list={layers} />
-        </>
-      ) : null}
+      <div className="selector">
+        {layersSorted
+          ? Object.keys(layersSorted).map((label, key) => (
+              <div key={key} style={{ margin: 10 }}>
+                <h2>{label}</h2>
+                <RadioList list={layersSorted[label]} />
+              </div>
+            ))
+          : null}
+      </div>
     </div>
   );
 }
