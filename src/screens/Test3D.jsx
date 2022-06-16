@@ -77,9 +77,9 @@ function Test3D() {
       <div className="selector">
         {layersSorted
           ? Object.keys(layersSorted).map((label, key) => (
-              <div key={key} style={{ margin: 30 }}>
+              <div key={key} className="item_container">
                 <h2>{label}</h2>
-                <RadioList list={layersSorted[label]} />
+                <RadioList list={layersSorted[label]} label={label} />
               </div>
             ))
           : null}

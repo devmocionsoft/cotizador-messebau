@@ -13,27 +13,27 @@
   "nodes": [
     {
       "mesh": 0,
-      "name": "Panel_Nicho_2"
+      "name": "Panel_Nicho"
     },
     {
       "mesh": 1,
-      "name": "Pared2"
+      "name": "Pared-2_lateral"
     },
     {
       "mesh": 2,
-      "name": "Pared1"
+      "name": "Pared-1_Lateral"
     },
     {
       "mesh": 3,
-      "name": "Tarima1"
+      "name": "Tarima_Estandar"
     },
     {
       "mesh": 4,
-      "name": "Zoclo1"
+      "name": "Zoclo_Base"
     },
     {
       "mesh": 5,
-      "name": "CajaDeluz1"
+      "name": "Luz_Estandar"
     },
     {
       "mesh": 6,
@@ -41,19 +41,19 @@
     },
     {
       "mesh": 7,
-      "name": "CounterTipo1_Inferior"
+      "name": "Counter-1_Inferior"
     },
     {
       "mesh": 8,
-      "name": "CounterTipo1_Superior"
+      "name": "Counter-1_Superior"
     },
     {
       "mesh": 9,
-      "name": "CounterTipo2_Base"
+      "name": "Counter-2_Base"
     },
     {
       "mesh": 10,
-      "name": "CounterTipo2_Lightbox"
+      "name": "Counter-2_Lightbox"
     },
     {
       "mesh": 11,
@@ -61,11 +61,11 @@
     },
     {
       "mesh": 12,
-      "name": "Pantalla_32"
+      "name": "Pantalla_Pantalla-32'"
     },
     {
       "mesh": 13,
-      "name": "Bodega"
+      "name": "Bodega_Estandar"
     },
     {
       "mesh": 14,
