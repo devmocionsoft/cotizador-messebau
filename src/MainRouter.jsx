@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import Test3D from "./screens/Test3D";
+import Test3D from "./screens/Model3D";
 
 export default function MainRouter() {
   return (

@@ -1,11 +1,8 @@
 import { Suspense, useEffect, useRef, useState } from "react";
 import { Canvas, useThree, useLoader } from "@react-three/fiber";
-// import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { Html, useProgress } from "@react-three/drei";
-// import { MTLLoader } from "three-stdlib";
-// import CheckboxList from "../components/CheckboxList";
 import RadioList from "../components/RadioList";
 
 const CameraController = () => {
@@ -23,7 +20,7 @@ const CameraController = () => {
 
 function Scene({ setter }) {
   const ref = useRef();
-  const object2 = useLoader(GLTFLoader, "src/modelo/medium/Completo.gltf");
+  const object2 = useLoader(GLTFLoader, "src/modelo/medium/StandsGeneral.gltf");
 
   useEffect(() => {
     if (ref) {
@@ -49,11 +46,7 @@ function Test3D() {
       let meshList = {};
       layers.forEach((item) => {
         const label = item.name;
-        // const label = labels[0];
         meshList[label] = item.children;
-        // meshList[label]
-        //   ? meshList[label].push(item)
-        //   : (meshList[label] = [item]);
       });
       setLayersSorted(meshList);
       console.log(meshList);

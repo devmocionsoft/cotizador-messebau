@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export default function RadioList({ list, label }) {
-  const [selected, setSelected] = useState(list[0].name);
+  const [selected, setSelected] = useState("ninguno");
 
   useEffect(() => {
     list.forEach((item) => {

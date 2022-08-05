@@ -1,4 +1,5 @@
-import "./styles/CheckRadioList.css";
+import "./styles/radioList.css";
+import "./styles/test3d.css";
 import { BrowserRouter } from "react-router-dom";
 import MainRouter from "./MainRouter";
 

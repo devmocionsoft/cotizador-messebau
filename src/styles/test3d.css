@@ -1,0 +1,49 @@
+.test3d_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.canvas_container {
+  height: 100vh;
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  cursor: url(https://apviz.io/img/circular-arrows-cursor.1415c0f.svg) 15 15,
+    url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACy0lEQVRYw+1WO4taURC+iBa+n+ADjFtYWFjc0kawtlGwshGDtRBIYZsyYLOdCZKkS5UmltHFJgFZJPoDEl3E4GtXo7hGEszNfHLP5uzNkrgbTZp7YNhlzjkz35n5vrkKkiQJ/9MEFYAKQAVwsMCC8ECj0Sz+OQBaMbvd3i0UCp99Pt/wrwDQuudwOO47nc4nHo/nlJnL5Tpxu90nfr+fP3tkMBgasVhs0u12JaxgMHhG/keoBoDtBICWqNfrX4RCoQ+iKJ5WKpXGYDC4XC6XErPxeCwRiDYA0LJZrdbH9P+kXq9L/Gq1WhJ85XJ5lclk+gT6Ez3oFcD+AgCBLBbLm3A4POx0Ot/Jt1qv19JisdiMRqNNtVrd5PP5M2aUtMkAmEymEu4hoRKA0gdAaA3dy14BwKvNZvN5rVZb4lC73f6GF3m93g6hfkd/X1Ppn6GMnInKyqEquVxuMpvNrlpA95/L1ZqgEvBjPxAIXMhxBBuSAyk2otHoAC+CHy9U2g4kzCJesVj8AgA8R3Q63dtUKnUBEOAJgAnoCa1LOEEgBKA+C7C7AGDtBC+EbYGv+yFN1pYtSUEM1i9wYM+SPLrBd8zImk6nPwrxeLzHyAHJHHrykcJeMgBbMpLc+gwAlaeHMvEXtFptn3zJPVVEBPlYPlRcICL0GGtlZh7zl4AykUgMIbubSnqL5FnEAvmQDw8HIGwkGTOxARkBlKyErMzkLWJIiSlk17GMKWg0GsdMngAgP/TnHEBQfoSyhNBtqVQ65wcJ5AWZsQAwjGAAVRqmX7PZ/IrEMHwf8J3gZwiPNkkEGYKUSKycYGwhEMAiKWsJ9Kw8N5/Ppel0KjUajVUkEunJibM7fQtQNswHBMaIZUHxArRHSUpUEGd5ozK/J/9Tm8328Hfc+WMfUUo2v+XhslP/6d41uzMATLOtXG6pgH0CENXfhCoAFcAh7QcwZ45FyM5NbAAAAABJRU5ErkJggg==)
+      15 15,
+    auto;
+}
+
+.selector {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 10px;
+  width: calc(50vw - 20px);
+  height: calc(100vh - 40px);
+  margin: 20px 0px 20px 20px;
+  overflow-y: scroll;
+}
+
+.item_container {
+  padding: 10px;
+  min-width: 260px;
+  display: flex;
+  background: gainsboro;
+  flex-direction: column;
+}
+
+.item_container > h2 {
+  margin: 0;
+}
+
+.instructions {
+  height: 25%;
+  padding: 10px 20px;
+  width: 90%;
+  background: gainsboro;
+}
