@@ -32,7 +32,7 @@ export default function RadioList({ list, label }) {
 
 const Item = ({ item, selected, label }) => {
   const validation = selected === item.name;
-  const labels = item.name.split("_");
+  const labels = item.name;
   return (
     <>
       <label style={{ display: "inline-flex" }}>
@@ -43,7 +43,7 @@ const Item = ({ item, selected, label }) => {
           checked={validation}
           name={label}
         />
-        {labels[1]}
+        {labels}
       </label>
     </>
   );

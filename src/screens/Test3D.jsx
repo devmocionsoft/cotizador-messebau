@@ -1,12 +1,11 @@
 import { Suspense, useEffect, useRef, useState } from "react";
 import { Canvas, useThree, useLoader } from "@react-three/fiber";
-import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
+// import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { Html, useProgress } from "@react-three/drei";
-import { MTLLoader } from "three-stdlib";
-
-import CheckboxList from "../components/CheckboxList";
+// import { MTLLoader } from "three-stdlib";
+// import CheckboxList from "../components/CheckboxList";
 import RadioList from "../components/RadioList";
 
 const CameraController = () => {
@@ -24,13 +23,13 @@ const CameraController = () => {
 
 function Scene({ setter }) {
   const ref = useRef();
-  const object2 = useLoader(GLTFLoader, "src/modelo/small/Completo.gltf");
+  const object2 = useLoader(GLTFLoader, "src/modelo/medium/Completo.gltf");
 
   useEffect(() => {
     if (ref) {
+      console.log("ref > children", ref.current.children);
       setter(ref.current.children);
       ref.current.position.y = -1;
-      console.log(ref.current);
     }
   }, [ref]);
   return <primitive ref={ref} object={object2.scene} />;
@@ -49,13 +48,12 @@ function Test3D() {
     if (layers[0]) {
       let meshList = {};
       layers.forEach((item) => {
-        const labels = item.name.split("_");
-        // para explicarle a diseño el funcionamiento
-        console.log(labels);
-        const label = labels[0];
-        meshList[label]
-          ? meshList[label].push(item)
-          : (meshList[label] = [item]);
+        const label = item.name;
+        // const label = labels[0];
+        meshList[label] = item.children;
+        // meshList[label]
+        //   ? meshList[label].push(item)
+        //   : (meshList[label] = [item]);
       });
       setLayersSorted(meshList);
       console.log(meshList);
@@ -65,7 +63,10 @@ function Test3D() {
   return (
     <div className="test3d_container">
       <div className="canvas_container">
-        <Canvas camera={{ fov: 70, position: [0, 0, 5] }}>
+        <Canvas
+          style={{ height: "70%" }}
+          camera={{ fov: 70, position: [0, 0, 5] }}
+        >
           <Suspense fallback={<Loader />}>
             <CameraController />
             <ambientLight />
@@ -73,6 +74,19 @@ function Test3D() {
             <Scene setter={setLayers} />
           </Suspense>
         </Canvas>
+        <div className="instructions">
+          <b>click izquierdo:</b>
+          <br />
+          <li>mover la camara</li>
+          <br />
+          <b>click derecho:</b>
+          <br />
+          <li>mover el modelo 3D</li>
+          <br />
+          <b>rueda del mouse:</b>
+          <br />
+          <li>ampliar o reducir el tamaño</li>
+        </div>
       </div>
       <div className="selector">
         {layersSorted
