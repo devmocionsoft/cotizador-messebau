@@ -1,5 +1,5 @@
 import "./styles/radioList.css";
-import "./styles/test3d.css";
+import "./styles/model3d.css";
 import { BrowserRouter } from "react-router-dom";
 import MainRouter from "./MainRouter";
 

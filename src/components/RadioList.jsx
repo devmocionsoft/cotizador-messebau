@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export default function RadioList({ list, label }) {
-  const [selected, setSelected] = useState("ninguno");
+  const [selected, setSelected] = useState(list[0]?.name);
 
   useEffect(() => {
     list.forEach((item) => {
@@ -34,17 +34,15 @@ const Item = ({ item, selected, label }) => {
   const validation = selected === item.name;
   const labels = item.name;
   return (
-    <>
-      <label style={{ display: "inline-flex" }}>
-        <input
-          type="radio"
-          value={item.name}
-          onChange={() => {}}
-          checked={validation}
-          name={label}
-        />
-        {labels}
-      </label>
-    </>
+    <label style={{ display: "inline-flex" }}>
+      <input
+        type="radio"
+        value={item.name}
+        onChange={() => {}}
+        checked={validation}
+        name={label}
+      />
+      {labels}
+    </label>
   );
 };

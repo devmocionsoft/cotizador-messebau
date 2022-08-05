@@ -1,60 +1,20 @@
-import { Suspense, useEffect, useRef, useState } from "react";
-import { Canvas, useThree, useLoader } from "@react-three/fiber";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import { Suspense, useState } from "react";
+import { Canvas } from "@react-three/fiber";
 import { Html, useProgress } from "@react-three/drei";
 import RadioList from "../components/RadioList";
-
-const CameraController = () => {
-  const { camera, gl } = useThree();
-  useEffect(() => {
-    const controls = new OrbitControls(camera, gl.domElement);
-    controls.minDistance = 3;
-    controls.maxDistance = 20;
-    return () => {
-      controls.dispose();
-    };
-  }, [camera, gl]);
-  return null;
-};
-
-function Scene({ setter }) {
-  const ref = useRef();
-  const object2 = useLoader(GLTFLoader, "src/modelo/medium/StandsGeneral.gltf");
-
-  useEffect(() => {
-    if (ref) {
-      console.log("ref > children", ref.current.children);
-      setter(ref.current.children);
-      ref.current.position.y = -1;
-    }
-  }, [ref]);
-  return <primitive ref={ref} object={object2.scene} />;
-}
+import { Scene, CameraController } from "../components/Scene";
+import Instructions from "../components/Instructions";
 
 function Loader() {
   const { progress } = useProgress();
   return <Html center>{progress} % loaded</Html>;
 }
 
-function Test3D() {
-  const [layers, setLayers] = useState([]);
-  const [layersSorted, setLayersSorted] = useState();
-
-  useEffect(() => {
-    if (layers[0]) {
-      let meshList = {};
-      layers.forEach((item) => {
-        const label = item.name;
-        meshList[label] = item.children;
-      });
-      setLayersSorted(meshList);
-      console.log(meshList);
-    }
-  }, [layers]);
+function Model3D() {
+  const [layers, setLayers] = useState();
 
   return (
-    <div className="test3d_container">
+    <div className="model3d_container">
       <div className="canvas_container">
         <Canvas
           style={{ height: "70%" }}
@@ -67,26 +27,14 @@ function Test3D() {
             <Scene setter={setLayers} />
           </Suspense>
         </Canvas>
-        <div className="instructions">
-          <b>click izquierdo:</b>
-          <br />
-          <li>mover la camara</li>
-          <br />
-          <b>click derecho:</b>
-          <br />
-          <li>mover el modelo 3D</li>
-          <br />
-          <b>rueda del mouse:</b>
-          <br />
-          <li>ampliar o reducir el tamaño</li>
-        </div>
+        <Instructions />
       </div>
       <div className="selector">
-        {layersSorted
-          ? Object.keys(layersSorted).map((label, key) => (
+        {layers
+          ? Object.keys(layers).map((label, key) => (
               <div key={key} className="item_container">
-                <h2>{label}</h2>
-                <RadioList list={layersSorted[label]} label={label} />
+                <h4>{label}</h4>
+                <RadioList list={layers[label]} label={label} />
               </div>
             ))
           : null}
@@ -95,4 +43,4 @@ function Test3D() {
   );
 }
 
-export default Test3D;
+export default Model3D;

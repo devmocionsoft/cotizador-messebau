@@ -1,4 +1,4 @@
-.test3d_container {
+.model3d_container {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -37,7 +37,7 @@
   flex-direction: column;
 }
 
-.item_container > h2 {
+.item_container > h4 {
   margin: 0;
 }
 

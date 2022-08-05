@@ -1,10 +1,10 @@
 import { Routes, Route } from "react-router-dom";
-import Test3D from "./screens/Model3D";
+import Model3D from "./screens/Model3D";
 
 export default function MainRouter() {
   return (
     <Routes>
-      <Route path="/" element={<Test3D />} />
+      <Route path="/" element={<Model3D />} />
     </Routes>
   );
 }
