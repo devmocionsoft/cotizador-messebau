@@ -1,8 +1,18 @@
 import { useEffect, useState } from "react";
-import model from "../files/model.json";
 
-export default function useRadioGroup(list) {
-  const [selected, setSelected] = useState(list[0]?.name);
+export default function useRadioGroup(list, option) {
+  const [selected, setSelected] = useState("ninguno");
+
+  useEffect(() => {
+    let v = true;
+    setSelected("ninguno")
+    list.forEach((item) => {
+      if (item.options.includes(option) && v) {
+        setSelected(item.name);
+        v = false;
+      }
+    });
+  }, [option]);
 
   useEffect(() => {
     list.forEach((item) => {
