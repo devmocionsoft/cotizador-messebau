@@ -1,27 +1,46 @@
-import { useEffect, useState } from "react";
+import useRadioGroup from "../hooks/useRadioGroup";
 
-export default function RadioList({ list, label }) {
-  const [selected, setSelected] = useState(list[0]?.name);
+export default function RadioList({ layers }) {
+  return (
+    <div className="radio_list">
+      {layers
+        ? Object.keys(layers).map((label) => {
+            let list = layers[label];
+            // label === "Sillas" &&
+            //   (list = [layers[0].children, layers[1].children]);
 
-  useEffect(() => {
-    list.forEach((item) => {
-      if (item.name === selected) {
-        item.visible = true;
-      } else {
-        item.visible = false;
-      }
-    });
-  }, [selected, list]);
+            return (
+              <div key={label} className="item_container">
+                <h4>{label}</h4>
+                <RadioGroup list={list} label={label} />
+              </div>
+            );
+          })
+        : null}
+    </div>
+  );
+}
 
-  const onChangeValue = (event) => {
-    setSelected(event.target.value);
-  };
-
+function RadioGroup({ list, label }) {
+  const { selected, onChangeValue } = useRadioGroup(list);
   return (
     <div className="radio_container" onChange={onChangeValue}>
-      {list.map((item, key) => (
-        <Item key={key} {...{ item, selected, label }} />
-      ))}
+      {list.map((item, key) => {
+        const labels = item.name;
+        const validation = selected === labels;
+        return (
+          <label key={key} style={{ display: "inline-flex" }}>
+            <input
+              type="radio"
+              value={item.name}
+              onChange={() => {}}
+              checked={validation}
+              name={label}
+            />
+            {labels}
+          </label>
+        );
+      })}
       <label>
         <input type="radio" value="ninguno" name={label} />
         Ninguno
@@ -29,20 +48,3 @@ export default function RadioList({ list, label }) {
     </div>
   );
 }
-
-const Item = ({ item, selected, label }) => {
-  const validation = selected === item.name;
-  const labels = item.name;
-  return (
-    <label style={{ display: "inline-flex" }}>
-      <input
-        type="radio"
-        value={item.name}
-        onChange={() => {}}
-        checked={validation}
-        name={label}
-      />
-      {labels}
-    </label>
-  );
-};

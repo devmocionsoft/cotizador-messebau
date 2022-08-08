@@ -7,6 +7,7 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 export function Scene({ setter }) {
   const ref = useRef();
   const object2 = useLoader(GLTFLoader, "src/models/medium/StandsGeneral.gltf");
+  // const object2 = useLoader(GLTFLoader, "src/models/medium/modified.gltf");
 
   useEffect(() => {
     if (ref) {
