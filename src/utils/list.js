@@ -7,9 +7,9 @@ export const listFromGltf = (gltfList) => {
       const array = child.children;
       let options = child.name.split(",");
       options.pop();
-      console.log(name, options);
       array.forEach((layer) => {
         layer.options = options
+        layer.visible = false
         items.push(layer);
       });
     });

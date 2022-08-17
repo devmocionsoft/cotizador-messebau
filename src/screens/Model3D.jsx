@@ -15,12 +15,12 @@ function Model3D() {
       {/* <header></header> */}
       <div className="canvas_container">
         <Instructions />
-        <Canvas className="canvas" camera={camera}>
+        <Canvas className="canvas" camera={camera} shadowMap>
           <Suspense
             fallback={<Html center>{Math.floor(progress)} % loaded</Html>}
           >
             <CameraController />
-            <ambientLight />
+            <ambientLight intensity={0.3} />
             <pointLight position={[10, 10, 10]} />
             <Scene setter={setLayers} />
           </Suspense>

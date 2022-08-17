@@ -31,7 +31,7 @@ export default function RadioList({ layers }) {
 }
 
 function RadioGroup({ list, label, option }) {
-  const { selected, onChangeValue } = useRadioGroup(list, option);
+  const { selected, onChangeValue } = useRadioGroup(list, option, label);
   return (
     <div className="radio_container" onChange={onChangeValue}>
       <label>
