@@ -7,16 +7,17 @@ import { listFromGltf } from "../utils/list";
 
 export function Scene({ setter }) {
   const ref = useRef();
-  const object2 = useLoader(GLTFLoader, "src/models/medium/StandsGeneral.gltf");
+  const object2 = useLoader(GLTFLoader, "src/models/medium/StandsGeneral1.gltf");
 
   useEffect(() => {
     if (ref) {
-      ref.current.position.y = -2;
+      ref.current.position.y = -1;
       const list = listFromGltf(ref.current.children)
       setter(list);
       console.log(list);
     }
   }, []);
+  
   return <primitive ref={ref} object={object2.scene} />;
 }
 

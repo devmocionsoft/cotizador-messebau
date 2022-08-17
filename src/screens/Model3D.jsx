@@ -12,10 +12,13 @@ function Model3D() {
 
   return (
     <section>
-      <header></header>
+      {/* <header></header> */}
       <div className="canvas_container">
+        <Instructions />
         <Canvas className="canvas" camera={camera}>
-          <Suspense fallback={<Html center>{progress} % loaded</Html>}>
+          <Suspense
+            fallback={<Html center>{Math.floor(progress)} % loaded</Html>}
+          >
             <CameraController />
             <ambientLight />
             <pointLight position={[10, 10, 10]} />
@@ -24,8 +27,7 @@ function Model3D() {
         </Canvas>
         <RadioList layers={layers} />
       </div>
-      <Instructions />
-      <div className="relleno"></div>
+      {/* <div className="relleno"></div> */}
     </section>
   );
 }

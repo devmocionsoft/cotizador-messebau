@@ -4,14 +4,14 @@ export default function useRadioGroup(list, option) {
   const [selected, setSelected] = useState("ninguno");
 
   useEffect(() => {
-    let v = true;
     setSelected("ninguno")
-    list.forEach((item) => {
-      if (item.options.includes(option) && v) {
-        setSelected(item.name);
-        v = false;
-      }
-    });
+    // let v = true;
+    // list.forEach((item) => {
+    //   if (item.options.includes(option) && v) {
+    //     setSelected(item.name);
+    //     v = false;
+    //   }
+    // });
   }, [option]);
 
   useEffect(() => {
