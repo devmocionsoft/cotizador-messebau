@@ -16,6 +16,5 @@ export const listFromGltf = (gltfList) => {
     const data = { name, items };
     list.push(data);
   });
-  console.log(list);
   return list;
 };
