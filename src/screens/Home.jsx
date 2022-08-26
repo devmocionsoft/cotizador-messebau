@@ -1,4 +1,6 @@
 import React from "react";
+import Section_09 from "../components/Section_0.9";
+import Section_10 from "../components/Section_10";
 import Section_1 from "../components/Section_1";
 import Section_2 from "../components/Section_2";
 import Section_3 from "../components/Section_3";
@@ -9,13 +11,15 @@ export default function Home() {
   return (
     <div>
       <Header />
-      <section className="section_1" id="section_1">
+      <section className="Section_1" id="Section_1">
         <Section_1 />
       </section>
-      <section className="section_2" id="section_2">
-        <Section_2 />
+      <section className="Section_2" id="Section_2">
+        <Section_09 />
+        <Section_10 />
       </section>
-      <section className="section_3" id="section_3">
+      <section className="section_3" id="Section_3">
+        <Section_2 />
         <Section_3 />
       </section>
       <Footer />

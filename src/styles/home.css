@@ -1,0 +1,120 @@
+.header,
+.section_1_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+nav {
+  transform: rotate(90deg);
+  left: -14%;
+  position: absolute;
+  display: flex;
+  gap: 3vw;
+  /* text-decoration: none; */
+  font-size: 1.1vw;
+}
+
+nav > a {
+  color: white;
+}
+
+.header_bg {
+  width: 100%;
+}
+
+.header_logo {
+  position: absolute;
+  width: 41%;
+}
+
+.header_descripcion {
+  position: absolute;
+  bottom: 7%;
+  left: 10%;
+  color: white;
+  width: 30%;
+  font-size: 0.81vw;
+}
+
+.section_1_container {
+  background-color: white;
+}
+
+.stand_custom {
+  width: 73%;
+}
+
+.stand_custom-images {
+  width: 100%;
+}
+
+.footer {
+    width: 100%;
+    margin-top: -9px;
+}
+
+.fondLedup {
+    width: 100%;
+    margin-top: -13px;
+    background-size: cover !important;
+    background: url(https://firebasestorage.googleapis.com/v0/b/vassar-4f811.appspot.com/o/mesebau%2Fparte6_fondo.png?alt=media);
+}
+
+.logoImg {
+    margin: 10px auto;
+    display: flex;
+}
+
+.fondPreDi {
+    display: block;
+    width: 100%;
+    background-size: cover !important;
+    background: url(https://firebasestorage.googleapis.com/v0/b/vassar-4f811.appspot.com/o/mesebau%2Fparte4_context.png?alt=media&token=4a4bf2f4-8c83-4dfa-b275-86db1cbcbcba);
+}
+
+.textPreDi {
+    position: absolute;
+    padding: 13vw 15vw 8vh 29vw;
+    font-size: 1vw;
+    left: 21pc;
+    display: inline;
+    color: white;
+}
+
+.btnPreDi {
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+    margin: 6px 0 8px 0;
+    text-align: center;
+}
+
+.btn3Predi {
+    padding: 8px 20px 8px 20px;
+    border-color: white !important;
+    border-width: 1px;
+    border-style: solid;
+    border-color: white !important;
+    mso-text-raise: 10pt;
+    font-weight: bold;
+}
+
+.btn2PreDi {
+    background: rgba(255, 255, 255, 0);
+    text-decoration: none;
+    padding: 10px 25px;
+    color: white !important;
+    border-radius: 0px;
+    display: inline-block;
+    position: absolute;
+    border: solid;
+    display: grid;
+    left: 44%;
+    top: 156vw;
+}
+.Section_2 ,.Section_3{
+    width: 100%;
+}
