@@ -1,4 +1,4 @@
-export default function Instructions() {
+export default function Instructions({ children }) {
   return (
     <div className="instructions">
       <b>click izquierdo:</b>
@@ -12,6 +12,7 @@ export default function Instructions() {
       <b>rueda del mouse:</b>
       <br />
       <li>ampliar o reducir el tamaño</li>
+      {children}
     </div>
   );
 }
