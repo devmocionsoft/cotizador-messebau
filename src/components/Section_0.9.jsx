@@ -17,7 +17,7 @@ export default function Section_10() {
           </b>
         </p>
         <p className="btnPreDi">
-          <a href="https://www.youtube.com/watch?v=HpH1QwKX7aY&list=PLXwtQuclmBuKC5phmqtL15nrPPZ2LRL6a&utm_source=email_marketing&utm_medium=email&utm_campaign=casos_de_exito_youtube&utm_id=mocion_agencia_interactiva" 
+          <a href="" 
           className="btn2PreDi"><span className="btn3PreDi"><b>CONOCE MÁS</b></span></a></p>
     </div>
   )

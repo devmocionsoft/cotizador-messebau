@@ -117,17 +117,12 @@ nav > a {
 }
 
 .btn2PreDi {
-    background: rgba(255, 255, 255, 0);
-    text-decoration: none;
-    padding: 10px 25px;
-    color: white !important;
-    border-radius: 0px;
-    display: inline-block;
-    position: absolute;
-    border: solid;
-    display: grid;
-    left: 47vw;
-    top: 156vw;
+  padding: 10px 25px;
+  color: white !important;
+  position: absolute;
+  border: solid;
+  left: 44vw;
+  top: 156vw;
 }
 .Section_2 ,.Section_3{
     width: 100%;
