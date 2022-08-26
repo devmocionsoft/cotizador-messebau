@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap');
+.text{
+  font-family: 'Inter', sans-serif;
+}
 .header,
 .section_1_container {
   display: flex;
@@ -39,6 +43,15 @@ nav > a {
   width: 30%;
   font-size: 0.81vw;
 }
+.stand_descripcion{
+  position: relative;
+  bottom: 7%;
+  left: 54%;
+  color: white;
+  width: 30%;
+  font-size: 0.81vw;
+  top: -34vw;
+}
 
 .section_1_container {
   background-color: white;
@@ -72,13 +85,14 @@ nav > a {
 .fondPreDi {
     display: block;
     width: 100%;
+    height: 42vw;
     background-size: cover !important;
     background: url(https://firebasestorage.googleapis.com/v0/b/vassar-4f811.appspot.com/o/mesebau%2Fparte4_context.png?alt=media&token=4a4bf2f4-8c83-4dfa-b275-86db1cbcbcba);
 }
 
 .textPreDi {
     position: absolute;
-    padding: 13vw 15vw 8vh 29vw;
+    padding: 12vw 17vw 20vh 36vw;
     font-size: 1vw;
     left: 21pc;
     display: inline;
@@ -112,7 +126,7 @@ nav > a {
     position: absolute;
     border: solid;
     display: grid;
-    left: 44%;
+    left: 47vw;
     top: 156vw;
 }
 .Section_2 ,.Section_3{
