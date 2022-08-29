@@ -36,7 +36,7 @@ function RadioGroup({ list, label, option }) {
     <div className="radio_container" onChange={onChangeValue}>
       <label>
         <input
-          type="radio"
+          type="checkbox"
           value="ninguno"
           name={label}
           checked={selected === "ninguno"}
@@ -50,9 +50,9 @@ function RadioGroup({ list, label, option }) {
         if (!show) return null;
         const validation = selected === labels;
         return (
-          <label key={key} style={{ display: "inline-flex" }}>
+          <label class="form-control" key={key} style={{ display: "inline-flex" }}>
             <input
-              type="radio"
+              type="checkbox" 
               value={item.name}
               onChange={() => {}}
               checked={validation}
@@ -69,20 +69,25 @@ function RadioGroup({ list, label, option }) {
 function HorizontalRadioGroup({ array, option, setter }) {
   const onChangeValue = (event) => setter(event.target.value);
   return (
-    <div style={{ display: "flex", marginBottom: 10, color:"white" }} onChange={onChangeValue}>
-      <h4 style={{ margin: 0 }}>Distribución</h4>
-      {array.map((item) => (
-        <label key={item}>
-          <input
-            type="radio"
-            value={item}
-            onChange={() => {}}
-            checked={option === item}
-            name={"head"}
-          />
-          {item}
-        </label>
-      ))}
+    <div>
+      <h4 style={{ margin: 0, color:'white' }}>Distribución</h4>
+      <div style={{ display: "flex", marginBottom: 10, color:"white" }} onChange={onChangeValue}>
+        {array.map((item) => (
+          <div className="boxed">
+            <label key={item} >
+              {item}
+              <input
+                id={item}
+                type="radio"
+                value={item}
+                onChange={() => {}}
+                checked={option === item}
+                name={"head"}
+              />
+            </label>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

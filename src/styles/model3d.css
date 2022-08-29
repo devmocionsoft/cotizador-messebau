@@ -13,7 +13,7 @@ header {
 }
 
 .canvas {
-  width: 50%;
+  width: 70% !important;
   cursor: url(https://apviz.io/img/circular-arrows-cursor.1415c0f.svg) 15 15,
     url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACy0lEQVRYw+1WO4taURC+iBa+n+ADjFtYWFjc0kawtlGwshGDtRBIYZsyYLOdCZKkS5UmltHFJgFZJPoDEl3E4GtXo7hGEszNfHLP5uzNkrgbTZp7YNhlzjkz35n5vrkKkiQJ/9MEFYAKQAVwsMCC8ECj0Sz+OQBaMbvd3i0UCp99Pt/wrwDQuudwOO47nc4nHo/nlJnL5Tpxu90nfr+fP3tkMBgasVhs0u12JaxgMHhG/keoBoDtBICWqNfrX4RCoQ+iKJ5WKpXGYDC4XC6XErPxeCwRiDYA0LJZrdbH9P+kXq9L/Gq1WhJ85XJ5lclk+gT6Ez3oFcD+AgCBLBbLm3A4POx0Ot/Jt1qv19JisdiMRqNNtVrd5PP5M2aUtMkAmEymEu4hoRKA0gdAaA3dy14BwKvNZvN5rVZb4lC73f6GF3m93g6hfkd/X1Ppn6GMnInKyqEquVxuMpvNrlpA95/L1ZqgEvBjPxAIXMhxBBuSAyk2otHoAC+CHy9U2g4kzCJesVj8AgA8R3Q63dtUKnUBEOAJgAnoCa1LOEEgBKA+C7C7AGDtBC+EbYGv+yFN1pYtSUEM1i9wYM+SPLrBd8zImk6nPwrxeLzHyAHJHHrykcJeMgBbMpLc+gwAlaeHMvEXtFptn3zJPVVEBPlYPlRcICL0GGtlZh7zl4AykUgMIbubSnqL5FnEAvmQDw8HIGwkGTOxARkBlKyErMzkLWJIiSlk17GMKWg0GsdMngAgP/TnHEBQfoSyhNBtqVQ65wcJ5AWZsQAwjGAAVRqmX7PZ/IrEMHwf8J3gZwiPNkkEGYKUSKycYGwhEMAiKWsJ9Kw8N5/Ppel0KjUajVUkEunJibM7fQtQNswHBMaIZUHxArRHSUpUEGd5ozK/J/9Tm8328Hfc+WMfUUo2v+XhslP/6d41uzMATLOtXG6pgH0CENXfhCoAFcAh7QcwZ45FyM5NbAAAAABJRU5ErkJggg==)
       15 15,
@@ -29,7 +29,7 @@ header {
 .radio_cont {
   height: calc(100% - 40px);
   margin: 20px;
-  width: 300px;
+  width: 400px;
 }
 
 .radio_list {
@@ -46,8 +46,11 @@ header {
   padding: 10px;
   min-width: 260px;
   display: flex;
-  background: gainsboro;
+  background: rgba(220, 220, 220, 0);
   flex-direction: column;
+  color: white;
+  border: 2px solid #ffffff;
+
 }
 
 .item_container > h4 {
@@ -55,14 +58,121 @@ header {
 }
 
 .instructions {
+  border: 2px solid #ffffff;
   margin: 10px;
   padding: 10px;
-  background: gainsboro;
+  background: rgba(220, 220, 220, 0);
   width: fit-content;
 }
+
+
 
 .relleno {
   width: 100%;
   height: 100vh;
   background: lavender;
+}
+
+b, li, p{
+  color: white;
+  margin-left: 30px;
+}
+.instructions__line_uno{
+  border-bottom: 1px solid #ffffff;
+}
+.instructions__line_dos{
+  margin-top: 20px;
+  border-bottom: 1px solid #ffffff;
+}
+.instructions__line_tres{
+  margin-top: 20px;
+}
+
+/* Estilos de :checked */
+
+input[type=checkbox] {
+	-moz-appearance:none;
+	-webkit-appearance:none;
+	-o-appearance:none;
+	outline: none;
+	content: none;	
+}
+
+input[type=checkbox]:before {
+	font-family: "FontAwesome";
+    content: "\f00c";
+    font-size: 15px;
+    color: transparent !important;
+    background: #000000;
+    display: block;
+    width: 15px;
+    height: 15px;
+    border: 1px solid rgb(255, 255, 255);
+    margin-right: 7px;
+}
+
+input[type=checkbox]:checked:before {
+
+	color: rgb(255, 255, 255) !important;
+}
+
+/* nuevo :checked */
+
+input[type=checkbox] {
+  position: relative;
+  cursor: pointer;
+  
+}
+input[type=checkbox]:before {
+  content: "";
+  display: block;
+  /* position: absolute; */
+  width: 16px;
+  height: 16px;
+  top: 0;
+  left: 0;
+  border: 1px solid #ffffff;
+  border-radius: 3px;
+  background-color: black;
+}
+input[type=checkbox]:checked:after {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  position: absolute;
+  top: 2px;
+  left: 6px;
+}
+
+
+/* .my-checkbox {
+  width: 8vh;
+  height: 8vh;
+  text-align: center;
+} */
+
+.boxed{
+  margin: 8px;
+}
+.boxed label {
+  display: inline-block;
+  width: 20px;
+  padding: 10px;
+  border: solid 2px rgb(255, 255, 255);
+  transition: all 0.3s;
+}
+
+.boxed input[type="radio"] {
+  display: none;
+}
+
+.boxed input[type="radio"]:checked + label {
+  border: solid 2px red !important;
+  color: red;
 }
