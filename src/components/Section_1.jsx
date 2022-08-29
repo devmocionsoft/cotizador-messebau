@@ -5,9 +5,9 @@ const images =
 
 export default function Section_1() {
   return (
-    <div className="section_1_container">
+    <section className="section_1" id="stand_custom">
       <img className="stand_custom" src={titulo} alt="Stand custom" />
       <img className="stand_custom-images" src={images} alt="Imagenes stands" />
-    </div>
+    </section>
   );
 }

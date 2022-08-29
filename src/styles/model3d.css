@@ -50,7 +50,6 @@ header {
   flex-direction: column;
   color: white;
   border: 2px solid #ffffff;
-
 }
 
 .item_container > h4 {
@@ -65,65 +64,63 @@ header {
   width: fit-content;
 }
 
-
-
 .relleno {
   width: 100%;
   height: 100vh;
   background: lavender;
 }
 
-b, li, p{
+.instructions > b,
+li,
+p {
   color: white;
   margin-left: 30px;
 }
-.instructions__line_uno{
+.instructions__line_uno {
   border-bottom: 1px solid #ffffff;
 }
-.instructions__line_dos{
+.instructions__line_dos {
   margin-top: 20px;
   border-bottom: 1px solid #ffffff;
 }
-.instructions__line_tres{
+.instructions__line_tres {
   margin-top: 20px;
 }
 
 /* Estilos de :checked */
 
-input[type=checkbox] {
-	-moz-appearance:none;
-	-webkit-appearance:none;
-	-o-appearance:none;
-	outline: none;
-	content: none;	
+input[type="checkbox"] {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -o-appearance: none;
+  outline: none;
+  content: none;
 }
 
-input[type=checkbox]:before {
-	font-family: "FontAwesome";
-    content: "\f00c";
-    font-size: 15px;
-    color: transparent !important;
-    background: #000000;
-    display: block;
-    width: 15px;
-    height: 15px;
-    border: 1px solid rgb(255, 255, 255);
-    margin-right: 7px;
+input[type="checkbox"]:before {
+  font-family: "FontAwesome";
+  content: "\f00c";
+  font-size: 15px;
+  color: transparent !important;
+  background: #000000;
+  display: block;
+  width: 15px;
+  height: 15px;
+  border: 1px solid rgb(255, 255, 255);
+  margin-right: 7px;
 }
 
-input[type=checkbox]:checked:before {
-
-	color: rgb(255, 255, 255) !important;
+input[type="checkbox"]:checked:before {
+  color: rgb(255, 255, 255) !important;
 }
 
 /* nuevo :checked */
 
-input[type=checkbox] {
+input[type="checkbox"] {
   position: relative;
   cursor: pointer;
-  
 }
-input[type=checkbox]:before {
+input[type="checkbox"]:before {
   content: "";
   display: block;
   /* position: absolute; */
@@ -135,7 +132,7 @@ input[type=checkbox]:before {
   border-radius: 3px;
   background-color: black;
 }
-input[type=checkbox]:checked:after {
+input[type="checkbox"]:checked:after {
   content: "";
   display: block;
   width: 5px;
@@ -150,17 +147,8 @@ input[type=checkbox]:checked:after {
   left: 6px;
 }
 
-
-/* .my-checkbox {
-  width: 8vh;
-  height: 8vh;
-  text-align: center;
-} */
-
-.boxed{
+.radio_box {
   margin: 8px;
-}
-.boxed label {
   display: inline-block;
   width: 20px;
   padding: 10px;
@@ -168,11 +156,13 @@ input[type=checkbox]:checked:after {
   transition: all 0.3s;
 }
 
-.boxed input[type="radio"] {
-  display: none;
+.radio_box:hover {
+  cursor: pointer;
 }
 
-.boxed input[type="radio"]:checked + label {
-  border: solid 2px red !important;
-  color: red;
+.radio_selected {
+  border: none;
+  background: white;
+  color: #000000;
+  /* background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='white' stroke='black' stroke-width='4' stroke-dasharray='50%2c 100%2c 50%2c 0' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e"); */
 }

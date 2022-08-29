@@ -1,13 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap');
-.text{
-  font-family: 'Inter', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap");
+.text {
+  font-family: "Inter", sans-serif;
 }
 .header,
-.section_1_container {
+.section_1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: white;
   position: relative;
   width: 100%;
 }
@@ -43,18 +44,15 @@ nav > a {
   width: 30%;
   font-size: 0.81vw;
 }
-.stand_descripcion{
+.stand_descripcion {
   position: relative;
   bottom: 7%;
   left: 54%;
   color: white;
-  width: 30%;
+  width: 22%;
+  margin-left: 44px;
   font-size: 0.81vw;
   top: -34vw;
-}
-
-.section_1_container {
-  background-color: white;
 }
 
 .stand_custom {
@@ -66,69 +64,48 @@ nav > a {
 }
 
 .footer {
-    width: 100%;
-    margin-top: -9px;
+  width: 100%;
+  margin-top: -9px;
 }
 
 .fondLedup {
-    width: 100%;
-    margin-top: -13px;
-    background-size: cover !important;
-    background: url(https://firebasestorage.googleapis.com/v0/b/vassar-4f811.appspot.com/o/mesebau%2Fparte6_fondo.png?alt=media);
+  width: 100%;
+  margin-top: -13px;
+  background-size: cover !important;
+  background: url(https://firebasestorage.googleapis.com/v0/b/vassar-4f811.appspot.com/o/mesebau%2Fparte6_fondo.png?alt=media);
 }
 
 .logoImg {
-    margin: 10px auto;
-    display: flex;
+  margin: 10px auto;
+  display: flex;
 }
 
-.fondPreDi {
-    display: block;
-    width: 100%;
-    height: 42vw;
-    background-size: cover !important;
-    background: url(https://firebasestorage.googleapis.com/v0/b/vassar-4f811.appspot.com/o/mesebau%2Fparte4_context.png?alt=media&token=4a4bf2f4-8c83-4dfa-b275-86db1cbcbcba);
+.section_2 {
+  display: block;
+  width: 100%;
+  height: 42vw;
+  background-size: cover !important;
+  background: url(https://firebasestorage.googleapis.com/v0/b/vassar-4f811.appspot.com/o/mesebau%2Fparte4_context.png?alt=media&token=4a4bf2f4-8c83-4dfa-b275-86db1cbcbcba);
 }
 
 .textPreDi {
-    position: absolute;
-    padding: 12vw 17vw 20vh 36vw;
-    font-size: 1vw;
-    left: 21pc;
-    display: inline;
-    color: white;
+  position: absolute;
+  padding: 12vw 17vw 20vh 36vw;
+  font-size: 1vw;
+  left: 21pc;
+  display: inline;
+  color: white;
 }
-
-.btnPreDi {
-    font-size: 13px;
-    font-family: 'Montserrat', sans-serif;
-    margin: 6px 0 8px 0;
-    text-align: center;
-}
-
-.btn3Predi {
-    padding: 8px 20px 8px 20px;
-    border-color: white !important;
-    border-width: 1px;
-    border-style: solid;
-    border-color: white !important;
-    mso-text-raise: 10pt;
-    font-weight: bold;
-}
-
 .btn2PreDi {
-    background: rgba(255, 255, 255, 0);
-    text-decoration: none;
-    padding: 10px 25px;
-    color: white !important;
-    border-radius: 0px;
-    display: inline-block;
-    position: absolute;
-    border: solid;
-    display: grid;
-    left: 47vw;
-    top: 156vw;
-}
-.Section_2 ,.Section_3{
-    width: 100%;
+  background: rgba(255, 255, 255, 0);
+  text-decoration: none;
+  padding: 10px 25px;
+  color: white;
+  border-radius: 0px;
+  display: inline-block;
+  position: absolute;
+  border: 1px solid white;
+  display: grid;
+  right: 43vw;
+  top: 156vw;
 }

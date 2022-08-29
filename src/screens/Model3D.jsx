@@ -15,24 +15,22 @@ function Model3D() {
     const li = layers.map((l) => l.items.filter((i) => i.visible));
     // merge array de arrays
     var merged = [].concat.apply([], li);
-    // console.log("Weee", merged);
+    console.log("Weee", merged);
   };
 
   return (
     <section>
-      {/* <header></header> */}
       <div className="canvas_container">
         <Instructions>
-          {/* <h1>Enviar cotización</h1>
-          <button onClick={onClick}>Press me!</button> */}
+          <button onClick={onClick}>Press me!</button>
         </Instructions>
         <Canvas className="canvas" camera={camera}>
           <Suspense
             fallback={<Html center>{Math.floor(progress)} % loaded</Html>}
           >
             <CameraController />
-            <ambientLight intensity={0.3} />
-            <pointLight position={[10, 10, 10]} />
+            <ambientLight intensity={0.5} />
+            {/* <pointLight position={[10, 10, 10]} /> */}
             <Scene setter={setLayers} />
           </Suspense>
         </Canvas>

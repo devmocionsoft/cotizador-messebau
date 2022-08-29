@@ -7,12 +7,12 @@ let logo =
 
 export default function Header() {
   return (
-    <div className="header">
+    <section className="header" id="about_us">
       <nav>
-        <a href="#Header">NOSOTROS</a>
-        <a href="#section_1">STAND CUSTOM</a>
-        <a href="#section_2">STAND PREDISEÑADOS</a>
-        <a href="#section_3">LEDUP</a>
+        <a href="#about_us">NOSOTROS</a>
+        <a href="#stand_custom" id="back">STAND CUSTOM</a>
+        <a href="#stand_prediseñados">STAND PREDISEÑADOS</a>
+        <a href="#ledup">LEDUP</a>
       </nav>
       <img className="header_bg" src={background} alt="Background" />
       <img className="header_logo" src={logo} alt="Logo Mesebau" />
@@ -34,6 +34,6 @@ export default function Header() {
         Convention Center, Javits Center NY, WTC Sao Paulo, Rural de Buenos
         Aires, Casa Piedra SCL , Espacio Riesco SCL.
       </p>
-    </div>
+    </section>
   );
 }
