@@ -215,3 +215,11 @@ input[type="checkbox"]:checked:after {
   left: 6vh;
   width: 6vh;
 }
+
+.select_fake{
+  display: block;
+  position: absolute;
+  top: 85vh;
+  left: 32vw;
+  width: 45vh;
+}

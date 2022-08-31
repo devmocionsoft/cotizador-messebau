@@ -36,6 +36,7 @@ function Model3D() {
           </Suspense>
         </Canvas>
         <RadioList layers={layers} />
+      <img className="select_fake" src="https://firebasestorage.googleapis.com/v0/b/vassar-4f811.appspot.com/o/mesebau%2Fselect_fake.png?alt=media&token=ee3f4e8d-23f5-4265-ba7f-189d03ab8c50" alt="" />
       </div>
       {/* <div className="relleno"></div> */}
     </section>
