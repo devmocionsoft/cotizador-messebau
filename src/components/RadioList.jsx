@@ -3,6 +3,13 @@ import useRadioGroup from "../hooks/useRadioGroup";
 
 const options = ["1", "2", "3", "4", "5", "6"];
 export default function RadioList({ layers }) {
+  const onClick = () => {
+    // filtrar objects visibles
+    const li = layers.map((l) => l.items.filter((i) => i.visible));
+    // merge array de arrays
+    var merged = [].concat.apply([], li);
+    console.log("RadioList", merged);
+  };
   const [selected, setSelected] = useState(options[0]);
   if (!layers) return null;
   return (
@@ -23,7 +30,7 @@ export default function RadioList({ layers }) {
         )}
       </div>
       <div className="button_container">
-      <button class="button"><b>COTIZADOR</b></button>
+      <button onClick={onClick} class="button"><b>COTIZAR</b></button>
       </div>
     </div>
   );
