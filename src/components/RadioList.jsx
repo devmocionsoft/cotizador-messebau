@@ -22,6 +22,9 @@ export default function RadioList({ layers }) {
           ) : null
         )}
       </div>
+      <div className="button_container">
+      <button class="button"><b>COTIZADOR</b></button>
+      </div>
     </div>
   );
 }
@@ -70,7 +73,7 @@ function HorizontalRadioGroup({ option, setter }) {
   const onChangeValue = (event) => setter(event.target.value);
   return (
     <div>
-      <h4 style={{ margin: 0, color: "white" }}>Distribución</h4>
+      <h4 style={{ margin: 0, color: "white" }}>DISTRIBUCIÓN</h4>
       <div
         style={{ display: "flex", marginBottom: 10, color: "white" }}
         onChange={onChangeValue}
