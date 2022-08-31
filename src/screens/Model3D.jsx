@@ -21,6 +21,7 @@ function Model3D() {
   return (
     <section>
       <div className="canvas_container">
+        <img className="logo_print" src="https://firebasestorage.googleapis.com/v0/b/vassar-4f811.appspot.com/o/mesebau%2Flogo.png?alt=media&token=0a564515-f68e-4a86-a207-a03e2bc6afd4" alt="" />
         <Instructions>
           <button onClick={onClick}>Press me!</button>
         </Instructions>

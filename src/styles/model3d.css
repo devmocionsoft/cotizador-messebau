@@ -207,3 +207,11 @@ input[type="checkbox"]:checked:after {
   background-color: #e7e7e7; color: black;
   width: 100%;
 }
+
+.logo_print{
+  display: block;
+  position: absolute;
+  top: 3vh;
+  left: 6vh;
+  width: 6vh;
+}
