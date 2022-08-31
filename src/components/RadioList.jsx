@@ -1,19 +1,27 @@
 import { useState } from "react";
 import useRadioGroup from "../hooks/useRadioGroup";
+import ModalContactUs from "./ModalContactUs";
 
 const options = ["1", "2", "3", "4", "5", "6"];
 export default function RadioList({ layers }) {
+  const [modal, setModal] = useState(false);
+
   const onClick = () => {
     // filtrar objects visibles
     const li = layers.map((l) => l.items.filter((i) => i.visible));
     // merge array de arrays
     var merged = [].concat.apply([], li);
     console.log("RadioList", merged);
+    setModal(true);
   };
+
   const [selected, setSelected] = useState(options[0]);
+
   if (!layers) return null;
+
   return (
     <div className="radio_cont">
+      {modal ? <ModalContactUs {...{ setModal }} /> : null}
       <HorizontalRadioGroup option={selected} setter={setSelected} />
       <div className="radio_list">
         {layers.map((layer) =>
@@ -30,7 +38,9 @@ export default function RadioList({ layers }) {
         )}
       </div>
       <div className="button_container">
-      <button onClick={onClick} class="button"><b>COTIZAR</b></button>
+        <button onClick={onClick} class="button">
+          <b>COTIZAR</b>
+        </button>
       </div>
     </div>
   );

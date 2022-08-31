@@ -12,3 +12,63 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.modal_container,
+.modal_div,
+.modal_form,
+.modal_logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal_container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  width: calc(100vw - 40px);
+  height: calc(100vh - 40px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 5;
+}
+
+.modal_form {
+  width: 22vw;
+  background: white;
+  color: gray;
+  flex-direction: column;
+  padding: 4vw;
+  height: calc(75vh - 8vw);
+  gap: 20px;
+  font-size: 1vw;
+}
+
+input::placeholder {
+  font-size: 1vw;
+}
+
+.modal_form > input,
+textarea {
+  padding: 10px;
+  width: 100%;
+}
+
+.modal_form > button {
+  background: black;
+  color: white;
+  padding: 5px 35px;
+}
+
+.modal_logo {
+  width: 35vw;
+  height: 75vh;
+  background: url("/contactUs/bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.modal_logo > img {
+  width: 60%;
+}
