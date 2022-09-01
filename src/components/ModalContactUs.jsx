@@ -1,6 +1,9 @@
 export default function ModalContactUs({ setModal }) {
   const onDismiss = () => setModal(false);
   const stopPropagation = (e) => e.stopPropagation();
+  const clickModal = () => {
+    setModal(false);
+  }
 
   return (
     <div className="modal_container" onClick={onDismiss}>
@@ -13,7 +16,7 @@ export default function ModalContactUs({ setModal }) {
             DESCRIPCIÓN
           </span>
           <textarea rows={8} />
-          <button>
+          <button onClick={clickModal}>
             <b>ENVIAR</b>
           </button>
         </div>
