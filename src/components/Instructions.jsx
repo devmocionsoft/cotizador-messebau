@@ -1,4 +1,4 @@
-export default function Instructions({ children }) {
+export default function Instructions() {
   return (
     <div>
       <b className="tittle_instruction">INSTRUCCIONES</b>
@@ -32,7 +32,6 @@ export default function Instructions({ children }) {
             <p>AMPLIAR O REDUCIR EL TAMAÑO</p>
           </div>
         </div>
-        {children}
       </div>
     </div>
   );
