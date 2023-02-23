@@ -30,7 +30,7 @@ export default function RadioList({ layers, onClick }) {
         })}
       </div>
       <div className="button_container">
-        <button onClick={onClick} class="button">
+        <button onClick={onClick} className="button">
           <b>COTIZAR</b>
         </button>
       </div>

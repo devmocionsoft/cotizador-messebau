@@ -9,7 +9,7 @@ export const listFromGltf = (gltfList) => {
       options.pop();
       array.forEach((layer) => {
         layer.options = options
-        layer.visible = false
+        // layer.visible = false
         items.push(layer);
       });
     });

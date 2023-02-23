@@ -21,7 +21,7 @@ export default function useRadioGroup(list, option, name) {
       if (item.name === selected) {
         item.visible = true;
       } else {
-        item.visible = false;
+        // item.visible = false;
       }
     });
   }, [selected, list]);
