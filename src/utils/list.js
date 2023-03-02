@@ -1,20 +1,19 @@
 export const listFromGltf = (gltfList) => {
   const list = [];
   gltfList.forEach((item) => {
+    const items = [];
     const name = item.name;
-    let items = [];
+    console.log(item);
     item.children.forEach((child) => {
-      const array = child.children;
-      let options = child.name.split(",");
-      options.pop();
-      array.forEach((layer) => {
-        layer.options = options
-        // layer.visible = false
-        items.push(layer);
-      });
+      let [name, options] = child.name.split("0");
+      child.options = options.split("_")
+      child.tag = name
+      child.visible = false
+      items.push(child)
     });
     const data = { name, items };
     list.push(data);
   });
+  console.log(list);
   return list;
 };

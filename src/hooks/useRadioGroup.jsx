@@ -5,7 +5,8 @@ export default function useRadioGroup(list, option, name) {
 
   useEffect(() => {
     setSelected("ninguno")
-    if (name === "Tarima" || name === "Zoclos" || name === "Counters" || name === "Sillas" || name === "Mesas" ) {
+    // name === "Counter"
+    if (name === "Tarimas" || name === "Zoclos" || name === "Sillas" || name === "Mesas" ) {
       let v = true;
       list.forEach((item) => {
         if (item.options.includes(option) && v) {
@@ -21,7 +22,7 @@ export default function useRadioGroup(list, option, name) {
       if (item.name === selected) {
         item.visible = true;
       } else {
-        // item.visible = false;
+        item.visible = false;
       }
     });
   }, [selected, list]);

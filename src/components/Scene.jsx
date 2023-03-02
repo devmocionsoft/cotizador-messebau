@@ -13,10 +13,9 @@ export function Scene({ setter }) {
     if (ref) {
       const scale = 0.3
       ref.current.scale.set(scale, scale, scale)
-      console.log(object);
-      // console.log(ref.current.scale);
       ref.current.position.y = -1;
-      const list = listFromGltf(ref.current.children);
+      const list = listFromGltf(ref.current.children[1].children[0].children[0].children);
+      console.log(list);
       setter(list);
     }
   }, []);
