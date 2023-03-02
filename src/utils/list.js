@@ -2,12 +2,12 @@ export const listFromGltf = (gltfList) => {
   const list = [];
   gltfList.forEach((item) => {
     const items = [];
-    const name = item.name;
+    const name = item.name.replace("_", " ")
     console.log(item);
     item.children.forEach((child) => {
-      let [name, options] = child.name.split("0");
+      let [itemName, options] = child.name.split("0");
       child.options = options.split("_")
-      child.tag = name
+      child.tag = itemName.replace("_", " ")
       child.visible = false
       items.push(child)
     });
