@@ -37,8 +37,8 @@ export default function RadioList({ layers, onClick }) {
 function RadioGroup({ list, label, option }) {
   const { selected, onChangeValue } = useRadioGroup(list, option, label);
   return (
-    <div className="radio_container" onChange={onChangeValue}>
-      <label>
+    <div className="radio_container" onChange={onChangeValue}> <br />
+      <label className="form-control" style={{ display: "inline-flex" }}>
         <input
           type="checkbox"
           value="ninguno"

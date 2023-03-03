@@ -11,11 +11,10 @@ export function Scene({ setter }) {
 
   useEffect(() => {
     if (ref) {
-      const scale = 0.3
+      const scale = 0.04
       ref.current.scale.set(scale, scale, scale)
       ref.current.position.y = -1;
-      const list = listFromGltf(ref.current.children[1].children[0].children[0].children);
-      console.log(list);
+      const list = listFromGltf(object.children);
       setter(list);
     }
   }, []);

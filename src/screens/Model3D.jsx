@@ -13,6 +13,7 @@ const selectFake =
 function Model3D() {
   const [layers, setLayers] = useState([]);
   const { progress } = useProgress();
+  const [light, setLight] = useState(true);
   // camera position [izq-der, arr-aba, ade-atras]
   const camera = { fov: 70, position: [0, 2, 5] };
 
@@ -34,7 +35,14 @@ function Model3D() {
         <Canvas className="canvas" camera={camera}>
           <Suspense fallback={<Html center>{p} % loaded</Html>}>
             <CameraController />
-            <ambientLight intensity={0.5} />
+            <ambientLight intensity={0.3} />
+            <directionalLight
+              intensity={0.5}
+              position={[0, 3, 2]}
+              shadow-mapSize-width={2048}
+              shadow-mapSize-height={2048}
+              castShadow
+            />
             <Scene setter={setLayers} />
           </Suspense>
         </Canvas>
