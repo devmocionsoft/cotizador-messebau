@@ -35,10 +35,10 @@ function Model3D() {
         <Canvas className="canvas" camera={camera}>
           <Suspense fallback={<Html center>{p} % loaded</Html>}>
             <CameraController />
-            <ambientLight intensity={0.3} />
+            <ambientLight intensity={0.2} />
             <directionalLight
-              intensity={0.5}
-              position={[0, 3, 2]}
+              intensity={0.4}
+              position={[0, 3, 1.1]}
               shadow-mapSize-width={2048}
               shadow-mapSize-height={2048}
               castShadow

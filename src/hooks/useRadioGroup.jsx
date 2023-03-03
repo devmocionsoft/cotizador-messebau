@@ -6,7 +6,7 @@ export default function useRadioGroup(list, option, name) {
   useEffect(() => {
     setSelected("ninguno")
     // name === "Counter"
-    if (name === "Tarimas" || name === "Zoclos" || name === "Sillas" || name === "Mesas" ) {
+    if (name === "Tarimas" || name === "Zoclos" || name === "Sillas" || name === "Mesas" || name === "Cabeceras" ) {
       let v = true;
       list.forEach((item) => {
         if (item.options.includes(option) && v) {
