@@ -73,3 +73,7 @@ textarea {
 .modal_logo > img {
   width: 60%;
 }
+.vertical {
+  display: flex;
+  flex-direction: column;
+}

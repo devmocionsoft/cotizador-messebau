@@ -1,6 +1,6 @@
 export default function Instructions() {
   return (
-    <div>
+    <div className="instructions_container">
       <b className="tittle_instruction">INSTRUCCIONES</b>
       <div className="instructions">
         <div className="instructions__line_uno">
@@ -29,7 +29,7 @@ export default function Instructions() {
           </div>
           <div className="instructions__line_uno_text">
             <b>RUEDA DEL MOUSE</b>
-            <p>AMPLIAR O REDUCIR EL TAMAÑO</p>
+            <p>AMPLIAR O REDUCIR<br />EL TAMAÑO</p>
           </div>
         </div>
       </div>

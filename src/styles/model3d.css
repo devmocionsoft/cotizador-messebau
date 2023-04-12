@@ -13,7 +13,7 @@ header {
 }
 
 .canvas {
-  width: 70% !important;
+  width: 70%;
   cursor: url(https://apviz.io/img/circular-arrows-cursor.1415c0f.svg) 15 15,
     url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACy0lEQVRYw+1WO4taURC+iBa+n+ADjFtYWFjc0kawtlGwshGDtRBIYZsyYLOdCZKkS5UmltHFJgFZJPoDEl3E4GtXo7hGEszNfHLP5uzNkrgbTZp7YNhlzjkz35n5vrkKkiQJ/9MEFYAKQAVwsMCC8ECj0Sz+OQBaMbvd3i0UCp99Pt/wrwDQuudwOO47nc4nHo/nlJnL5Tpxu90nfr+fP3tkMBgasVhs0u12JaxgMHhG/keoBoDtBICWqNfrX4RCoQ+iKJ5WKpXGYDC4XC6XErPxeCwRiDYA0LJZrdbH9P+kXq9L/Gq1WhJ85XJ5lclk+gT6Ez3oFcD+AgCBLBbLm3A4POx0Ot/Jt1qv19JisdiMRqNNtVrd5PP5M2aUtMkAmEymEu4hoRKA0gdAaA3dy14BwKvNZvN5rVZb4lC73f6GF3m93g6hfkd/X1Ppn6GMnInKyqEquVxuMpvNrlpA95/L1ZqgEvBjPxAIXMhxBBuSAyk2otHoAC+CHy9U2g4kzCJesVj8AgA8R3Q63dtUKnUBEOAJgAnoCa1LOEEgBKA+C7C7AGDtBC+EbYGv+yFN1pYtSUEM1i9wYM+SPLrBd8zImk6nPwrxeLzHyAHJHHrykcJeMgBbMpLc+gwAlaeHMvEXtFptn3zJPVVEBPlYPlRcICL0GGtlZh7zl4AykUgMIbubSnqL5FnEAvmQDw8HIGwkGTOxARkBlKyErMzkLWJIiSlk17GMKWg0GsdMngAgP/TnHEBQfoSyhNBtqVQ65wcJ5AWZsQAwjGAAVRqmX7PZ/IrEMHwf8J3gZwiPNkkEGYKUSKycYGwhEMAiKWsJ9Kw8N5/Ppel0KjUajVUkEunJibM7fQtQNswHBMaIZUHxArRHSUpUEGd5ozK/J/9Tm8328Hfc+WMfUUo2v+XhslP/6d41uzMATLOtXG6pgH0CENXfhCoAFcAh7QcwZ45FyM5NbAAAAABJRU5ErkJggg==)
       15 15,
@@ -29,7 +29,7 @@ header {
 .radio_cont {
   height: calc(100% - 40px);
   margin: 20px;
-  width: 400px;
+  width: 415px;
 }
 
 .radio_list {
@@ -62,8 +62,8 @@ header {
   border: 2px solid #ffffff;
   margin: 10px;
   padding: 10px;
+  width: 210px;
   background: rgba(220, 220, 220, 0);
-  width: 190px;
 }
 
 .relleno {
@@ -221,6 +221,29 @@ input[type="checkbox"]:checked:after {
   display: block;
   position: absolute;
   top: 85vh;
-  left: 32vw;
-  width: 45vh;
+  left: 30vw;
+  width: 360px;
+}
+
+@media (max-width: 1300px) {
+  .canvas_container {
+    flex-direction: column;
+  }
+  .select_fake{
+    top: 0;
+  }
+  .canvas {
+    min-height: 70vh;
+    margin-top: 105px;
+  }
+  .instructions_container {
+    display: none;
+  }
+}
+
+@media (max-width: 570px) {
+  .select_fake{
+    top: 15px;
+    width: 60vw;
+  }
 }
