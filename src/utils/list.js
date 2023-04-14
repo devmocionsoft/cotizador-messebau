@@ -5,7 +5,7 @@ export const listFromGltf = (gltfList) => {
     const name = item.name.replace(/_/g, " ")
     item.children.forEach((child) => {
       let [itemName, options] = child.name.split("0");
-      console.log(options);
+      // console.log(options);
       child.options = options.split("_")
       child.tag = itemName.replace(/_/g, " ")
       child.visible = false

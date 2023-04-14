@@ -4,6 +4,7 @@ import { Html, useProgress } from "@react-three/drei";
 import { Scene, CameraController } from "../components/Scene";
 import RadioList from "../components/RadioList";
 import Instructions from "../components/Instructions";
+import ModalContactUs from "../components/ModalContactUs";
 
 const logo =
   "https://firebasestorage.googleapis.com/v0/b/vassar-4f811.appspot.com/o/mesebau%2Flogo.png?alt=media&token=0a564515-f68e-4a86-a207-a03e2bc6afd4";
@@ -11,8 +12,11 @@ const selectFake =
   "https://firebasestorage.googleapis.com/v0/b/vassar-4f811.appspot.com/o/mesebau%2Fselect_fake.png?alt=media&token=8bf1ef55-465e-4345-b295-5313f9c80a47";
 
 function Model3D() {
-  const [layers, setLayers] = useState([]);
   const { progress } = useProgress();
+
+  const [modal, setModal] = useState(false);
+  const [layers, setLayers] = useState([]);
+  const [data, setData] = useState("");
   const [light, setLight] = useState(true);
   // camera position [izq-der, arr-aba, ade-atras]
   const camera = { fov: 70, position: [0, 2, 5] };
@@ -21,14 +25,18 @@ function Model3D() {
     // filtrar objects visibles
     const li = layers.map((l) => l.items.filter((i) => i.visible));
     // merge array de arrays
-    var merged = [].concat.apply([], li);
-    console.log("Weee", merged);
+    const merged = [].concat.apply([], li);
+    // listado de productos del carrito
+    const products = merged.map((i)=>i.tag).join(', ')
+    setData(products)
+    setModal(true)
   };
 
   const p = Math.floor(progress);
 
   return (
     <section>
+    {modal ? <ModalContactUs {...{ setModal, data }} /> : null}
       <div className="canvas_container">
         <img className="logo_print" src={logo} alt="" />
         <Instructions />

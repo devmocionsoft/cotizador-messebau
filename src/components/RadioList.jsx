@@ -1,17 +1,14 @@
 import { useState } from "react";
 import useRadioGroup from "../hooks/useRadioGroup";
-import ModalContactUs from "./ModalContactUs";
 
 const options = ["1", "2", "3", "4", "5", "6", "7"];
 export default function RadioList({ layers, onClick }) {
-  const [modal, setModal] = useState(false);
   const [selected, setSelected] = useState(options[0]);
 
   if (!layers) return null;
 
   return (
     <div className="radio_cont">
-      {modal ? <ModalContactUs {...{ setModal }} /> : null}
       <HorizontalRadioGroup option={selected} setter={setSelected} />
       <div className="radio_list">
         {layers.map((layer) => {
